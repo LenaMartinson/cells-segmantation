@@ -3,13 +3,10 @@ import cv2 as cv
 
 
 def contourIntersect(contour1, contour2):
-    # Two separate contours trying to check intersection on
     contours = [contour1, contour2]
 
-    # Create image filled with zeros the same size of original image
     blank = np.zeros((256, 256))
 
-    # Copy each contour into its own image and fill it with '1'
     image1 = cv.drawContours(blank.copy(), [contours[0]], 0, 1, thickness=cv.FILLED)
     image2 = cv.drawContours(blank.copy(), [contours[1]], 0, 1, thickness=cv.FILLED)
     
